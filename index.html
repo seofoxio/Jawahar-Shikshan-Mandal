@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Ads for School Admissions | Jawahar Shikshan Mandal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #05C3E0;
+            --secondary-color: #F9F6E7;
+            --dark-color: #1f2937;
+            --light-bg: #F9F6E7;
+            --accent-pink: #05C3E0;
+            --accent-blue: #05C3E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.8;
+            color: var(--dark-color);
+            background: #ffffff;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--primary-color);
+            padding: 1rem 0;
+            box-shadow: 0 8px 32px rgba(5, 195, 224, 0.25);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white !important;
+            animation: slideInDown 0.6s ease-out;
+        }
+
+        .navbar-brand img {
+            height: 35px;
+            object-fit: contain;
+            margin-right: 0.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero-new {
+            background: linear-gradient(135deg, #ffffff 0%, #F9F6E7 50%, #F9F6E7 100%);
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(5, 195, 224, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-new::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(5, 195, 224, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8em;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #333;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.875rem 2.5rem;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 12px 30px rgba(5, 195, 224, 0.35);
+            cursor: pointer;
+            font-size: 1.05em;
+            position: relative;
+            overflow: hidden;
+            animation: bounce-light 2.5s ease-in-out infinite;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(5, 195, 224, 0.4);
+            color: white;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Sections */
+        section h2 {
+            font-size: 3.5em;
+            margin-bottom: 3.5rem;
+            text-align: center;
+            color: var(--dark-color);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        section h2 span {
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        /* Card Styles */
+        .service-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(5, 195, 224, 0.15);
+            text-align: center;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            animation: scaleIn 0.6s ease-out backwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(5, 195, 224, 0.2);
+            border-color: rgba(5, 195, 224, 0.4);
+        }
+
+        .service-card i {
+            font-size: 3.5em;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+
+        /* Package Card */
+        .package-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            border: 1px solid rgba(5, 195, 224, 0.1);
+            animation: slideInUp 0.6s ease-out backwards;
+        }
+
+        .package-card:nth-child(1) { animation-delay: 0.2s; }
+        .package-card:nth-child(2) { animation-delay: 0.3s; }
+        .package-card:nth-child(3) { animation-delay: 0.4s; }
+
+        .package-card:hover {
+            transform: translateY(-25px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(5, 195, 224, 0.25);
+        }
+
+        .package-card.featured {
+            transform: scale(1.08);
+            border: 2px solid var(--primary-color);
+        }
+
+        .package-card.featured:hover {
+            transform: scale(1.11) translateY(-25px);
+        }
+
+        .package-card.featured::before {
+            content: '⭐ MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 0.625rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 6px 20px rgba(5, 195, 224, 0.4);
+            z-index: 10;
+        }
+
+        .package-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.875rem 1.25rem;
+            text-align: center;
+        }
+
+        .package-name {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+
+        .package-price {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin: 1.25rem 0;
+            color: white;
+        }
+
+        .package-period {
+            opacity: 0.95;
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+        }
+
+        .package-body {
+            padding: 1.875rem 1.25rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 1.25rem 0;
+            flex-grow: 1;
+            padding: 0;
+        }
+
+        .package-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            color: #4a4a4a;
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .package-features li:before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2em;
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .package-btn {
+            width: 100%;
+            padding: 1rem 0;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1.05em;
+            margin-top: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 12px 30px rgba(127, 179, 213, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .package-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 18px 45px rgba(127, 179, 213, 0.4);
+        }
+
+        .package-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Stats */
+        .stat-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 1.5rem;
+            border: 2px solid var(--primary-color);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 40px rgba(5, 195, 224, 0.12);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            animation: scaleIn 0.7s ease-out backwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(5, 195, 224, 0.05);
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+
+        .stat-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 30px 70px rgba(5, 195, 224, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+            display: inline-block;
+            animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+        }
+
+        .stat-card:nth-child(1) .stat-number { animation-delay: 0.3s; }
+        .stat-card:nth-child(2) .stat-number { animation-delay: 0.4s; }
+        .stat-card:nth-child(3) .stat-number { animation-delay: 0.5s; }
+        .stat-card:nth-child(4) .stat-number { animation-delay: 0.6s; }
+
+        .stat-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .stat-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1em;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #F9F6E7 0%, #F9F6E7 100%);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(5, 195, 224, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 4rem 3.5rem;
+            border-radius: 2rem;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 20px 60px rgba(5, 195, 224, 0.15);
+            animation: slideInUp 0.8s ease-out, glow-pulse 3s ease-in-out infinite;
+        }
+
+        .cta-content:hover {
+            box-shadow: 0 30px 80px rgba(5, 195, 224, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .cta-section h2 {
+            color: var(--dark-color);
+            font-size: 2.8em;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-section h2::after {
+            display: none;
+        }
+
+        .cta-section p {
+            color: #4a5568;
+            line-height: 1.8;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 4rem 0 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3em;
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-section {
+            color: #b0b0b0;
+            font-size: 1em;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1.875rem;
+            text-align: center;
+            color: #888;
+        }
+
+        .instagram-link {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .instagram-link a {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .instagram-link a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(127, 179, 213, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce-light {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(5, 195, 224, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(5, 195, 224, 0.7);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2em;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            .package-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand" href="https://seofox.io/" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZZJoUYi853n3oUIXIMMx29KBmf3lzLPeiSA&s" alt="seofox.io Logo" style="height: 40px; object-fit: contain; margin-right: 0.75rem;">
+                <span style="font-weight: 800; letter-spacing: 0.5px;">seofox.io</span>
+            </a>
+
+            <div class="navbar-text d-none d-md-flex" style="color: white; font-size: 0.9em; gap: 2rem; margin-left: auto; margin-right: 2rem;">
+                <div>
+                    <div style="opacity: 0.9; font-size: 0.85em;">📍 Vartak Nagar, Thane West, 400606</div>
+                </div>
+                <div>
+                    <div style="opacity: 0.9; font-size: 0.85em;">📞 +91 8767532568</div>
+                </div>
+            </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-new py-5">
+        <div class="container-lg">
+            <div class="hero-text" style="max-width: 800px;">
+                <h1>Turn Your <span>Instagram Page</span> Into an Admission Lead Machine</h1>
+                <p class="fs-5" style="color: #333;">You already have an Instagram page. Now let's run targeted ads to reach parents actively searching for quality school admissions. Get qualified admission inquiries directly from Instagram.</p>
+                <p style="color: #666;">Strategic Instagram ads designed to convert parents into enrolled students.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <button class="btn btn-primary" onclick="document.getElementById('packages').scrollIntoView()">View Packages</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="py-5" style="background: #F9F6E7;">
+        <div class="container-lg">
+            <h2>What We <span>Provide</span></h2>
+            <div class="row g-4 mt-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center p-4">
+                        <h5>SEO</h5>
+                        <ul class="list-unstyled small mt-3">
+                            <li>✓ Keyword Research</li>
+                            <li>✓ On-Page Optimization</li>
+                            <li>✓ Link Building</li>
+                            <li>✓ Technical SEO</li>
+                            <li>✓ Content Strategy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center p-4">
+                        <h5>SMM</h5>
+                        <ul class="list-unstyled small mt-3">
+                            <li>✓ Social Media Strategy</li>
+                            <li>✓ Content Calendar</li>
+                            <li>✓ Community Management</li>
+                            <li>✓ Influencer Collaboration</li>
+                            <li>✓ Analytics & Reporting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center p-4">
+                        <h5>Website Dev & Design</h5>
+                        <ul class="list-unstyled small mt-3">
+                            <li>✓ Responsive Design</li>
+                            <li>✓ UI/UX Design</li>
+                            <li>✓ Full Stack Development</li>
+                            <li>✓ E-Commerce Solutions</li>
+                            <li>✓ Site Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center p-4">
+                        <h5>Ads</h5>
+                        <ul class="list-unstyled small mt-3">
+                            <li>✓ Google Ads</li>
+                            <li>✓ Facebook & Instagram Ads</li>
+                            <li>✓ Campaign Management</li>
+                            <li>✓ A/B Testing</li>
+                            <li>✓ ROI Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About School -->
+    <section class="py-5">
+        <div class="container-lg">
+            <h2>About <span>Jawahar Shikshan Mandal</span></h2>
+            <div class="row g-5 align-items-center mt-4">
+                <div class="col-lg-6">
+                    <div>
+                        <h3 style="font-size: 1.8em; color: #333; margin-bottom: 1.25rem;">Building Excellence in Education</h3>
+                        <p style="color: #666; margin-bottom: 1rem;">Jawahar Shikshan Mandal is committed to providing quality education and developing future leaders. With modern facilities, experienced faculty, and a focus on holistic student development, the school is the ideal choice for families seeking exceptional education.</p>
+                        <p style="color: #666; margin-bottom: 1.5rem;"><strong>Instagram Following:</strong> @jawaharshikshanmandal</p>
+
+                        <h4 style="color: var(--primary-color); margin-top: 2rem; margin-bottom: 1rem;">📱 Your Instagram Advantage</h4>
+                        <p style="color: #666;">You already have an Instagram page reaching parents. Now we'll accelerate that with paid ads to convert followers into admission inquiries. Every ₹1 spent on ads returns 3-5x in enrollment value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section id="packages" class="py-5" style="background: #F9F6E7;">
+        <div class="container-lg">
+            <h2>Instagram Ads <span>Packages</span></h2>
+            <p class="text-center text-muted fs-5" style="max-width: 700px; margin: 0 auto 3rem;">Choose your ad budget and let us manage your Instagram ads to drive admission inquiries</p>
+
+            <div class="row g-4">
+                <!-- Instagram Ads Only -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <div class="package-name">Instagram Ads</div>
+                            <div class="package-price">₹15,000</div>
+                            <div class="package-period">per month</div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features">
+                                <li>Instagram Ad Campaign Setup & Strategy</li>
+                                <li>Parent Audience Targeting (25-45 years)</li>
+                                <li>2 Ad Creative Designs</li>
+                                <li>Daily Campaign Monitoring</li>
+                                <li>Weekly Performance Reports</li>
+                                <li>Lead Tracking & Optimization</li>
+                                <li>Estimated 20-30 Admission Leads/Month</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Management -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <div class="package-name">Social Media Management</div>
+                            <div class="package-price">₹17,000</div>
+                            <div class="package-period">per month</div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features">
+                                <li>Instagram Content Planning & Strategy</li>
+                                <li>2-3 Professional Posts Per Week</li>
+                                <li>Stories & Reels Creation</li>
+                                <li>Community Engagement & Comments</li>
+                                <li>Follower Growth Strategy</li>
+                                <li>Monthly Analytics Report</li>
+                                <li>Build Brand Authority on Instagram</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bundle: Ads + SMM -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card featured">
+                        <div class="package-header">
+                            <div class="package-name">Complete Growth</div>
+                            <div class="package-price">₹30,000</div>
+                            <div class="package-period">per month</div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features">
+                                <li>Instagram Ads Campaign (15K value)</li>
+                                <li>Social Media Management (17K value)</li>
+                                <li>Advanced Parent Targeting</li>
+                                <li>4+ Professional Posts Per Week</li>
+                                <li>Reels & Stories Daily</li>
+                                <li>Real-time Lead Conversion Tracking</li>
+                                <li>Bi-weekly Strategy Reviews</li>
+                                <li>Estimated 50-100 Admission Leads/Month</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: #F9F6E7; border-radius: 1rem; border-left: 4px solid var(--primary-color); text-align: center;">
+                <p style="color: #555; margin-bottom: 0; font-size: 0.95em;"><strong>💡 Recommended:</strong> The Complete Growth bundle (₹30K) gives you both paid ads + organic growth. Best ROI for schools. Save ₹2K/month vs. buying separately.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expected Results -->
+    <section id="results" class="py-5">
+        <div class="container-lg">
+            <h2>Expected <span>Results</span></h2>
+            <p class="text-center text-muted fs-5" style="max-width: 700px; margin: 0 auto 3rem;">Realistic results from Instagram ads for school admissions based on our track record</p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="stat-number">50-100</div>
+                        <div class="stat-title">Admission Leads/Month</div>
+                        <p>Qualified parent inquiries from Combined Growth Package (₹30K)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="stat-number">20-30</div>
+                        <div class="stat-title">Ads Only Leads/Month</div>
+                        <p>With Instagram Ads Package (₹15K) - driven conversions</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="stat-number">₹300-500</div>
+                        <div class="stat-title">Cost Per Lead</div>
+                        <p>Affordable parent inquiry cost with high conversion to enrollments</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="stat-number">3-5x</div>
+                        <div class="stat-title">ROI</div>
+                        <p>Return on marketing investment through enrollment growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container-lg">
+            <div class="cta-content">
+                <h2>Ready to Fill Your Admissions?</h2>
+                <p>Parents are searching for schools on Instagram right now. Every day without ads is a missed opportunity. Let's turn your Instagram followers into enrolled students.</p>
+                <p style="font-size: 0.95em; color: #666; margin-top: 1rem;"><strong>Quick Start:</strong> We can launch your first ad campaign within 2-3 days. First results visible within 1 week.</p>
+                <button class="btn btn-primary" onclick="sendWhatsApp('Instagram Ads Package', 'Interested')">Start on WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container-lg">
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-section">
+                        <h3>About seofox.io</h3>
+                        <p>Instagram ads specialist for schools and educational institutions. We turn your Instagram page into an enrollment machine with targeted, data-driven ad campaigns.</p>
+                        <p class="mt-3"><strong>🌐 Website:</strong><br><a href="https://www.seofox.io" target="_blank">www.seofox.io</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-section">
+                        <h3>School Instagram</h3>
+                        <div class="instagram-link">
+                            <a href="https://www.instagram.com/jawaharshikshanmandal/" target="_blank">
+                                <i class="fab fa-instagram"></i> @jawaharshikshanmandal
+                            </a>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.95em;">Connect with us on Instagram to see our latest campaigns and school updates.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-section">
+                        <h3>Quick Contact</h3>
+                        <p><strong>📞 Phone:</strong><br><a href="tel:+918767532568">+91 8767532568</a></p>
+                        <p class="mt-3"><strong>📍 Location:</strong><br>Vartak Nagar, Thane West<br>400606 India</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-section">
+                        <h3>Support</h3>
+                        <p><strong>✉️ Email:</strong><br><a href="mailto:seofox.contact@gmail.com">seofox.contact@gmail.com</a></p>
+                        <p class="mt-3"><strong>🕐 Hours:</strong><br>09:00 AM - 05:00 PM<br>Monday - Saturday</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 seofox.io. All rights reserved. Instagram Ads Specialist for Schools.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function sendWhatsApp(packageName, price) {
+            const phoneNumber = '918767532568';
+            const message = `Hi! I'm interested in the ${packageName} (${price}) for Jawahar Shikshan Mandal. Can we discuss how Instagram ads can help attract more admission inquiries?`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
